@@ -71,3 +71,25 @@ object placa {
     method peso() = peso 
     method color() = color 
 }
+
+// --- PERSONAS ---
+object rosa {
+    method leGusta(objeto) {
+        return objeto.peso() <= 2000
+    }
+}
+object estefania {
+    method leGusta(objeto) {
+        return objeto.color().esColorFuerte()
+    }
+}
+object luisa {
+    method leGusta(objeto) {
+        return objeto.material().esColorBrillante()
+    }
+}
+object juan {
+    method leGusta(objeto) {
+        return (not(objeto.color().esColorFuerte())) && (1200 <= objeto.peso() &&  objeto.peso() <= 1800)
+    }
+}
