@@ -11,6 +11,9 @@ object celeste {
 object pardo {
     method esColorFuerte() = false 
 }
+object naranja {
+    method esColorFuerte() = true 
+}
 
 // --- MATERIALES ---
 object cobre {
@@ -92,4 +95,33 @@ object juan {
     method leGusta(objeto) {
         return (not(objeto.color().esColorFuerte())) && (1200 <= objeto.peso() &&  objeto.peso() <= 1800)
     }
+}
+object arito {
+    method color() = celeste
+    method material() = madera 
+    method peso() = 180
+}
+object banquito {
+    var color = naranja 
+
+    method material() = madera 
+    method peso() = 1700
+
+    method cambiarColor(nuevoColor) {
+        color = nuevoColor
+    }
+
+    method color() = color
+}
+object cajita {
+    var objetoDentro = remera
+    method color() = rojo
+    method material() = cobre
+
+    method guardarNuevoObjeto(nuevoObjeto) {
+        objetoDentro = nuevoObjeto
+    }
+
+    method objetoDentro() = objetoDentro
+    method peso() = 400 + objetoDentro.peso()
 }
