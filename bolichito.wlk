@@ -96,6 +96,7 @@ object juan {
         return (not(objeto.color().esColorFuerte())) && (1200 <= objeto.peso() &&  objeto.peso() <= 1800)
     }
 }
+// --- OBJETOS ---
 object arito {
     method color() = celeste
     method material() = madera 
@@ -124,4 +125,39 @@ object cajita {
 
     method objetoDentro() = objetoDentro
     method peso() = 400 + objetoDentro.peso()
+}
+
+// --- BOLICHITO ---
+object bolichito {
+    var objetoEnVidriera = remera
+    var objetoEnMostrador  = pelota
+
+    method cambiarObjetoDeLaVidriera(nuevoObjeto) {
+        objetoEnVidriera = nuevoObjeto
+    }
+    method cambiarObjetoDelMostrador(nuevoObjeto) {
+        objetoEnMostrador  = nuevoObjeto
+    }
+    
+    method esBrillante() {
+        return (objetoEnVidriera.material().esColorBrillante()) && (objetoEnMostrador .material().esColorBrillante())
+    }
+    method esMonocromatico() {
+        return objetoEnVidriera.color() == objetoEnMostrador .color()
+    }
+    method estaEquilibrado() {
+        return objetoEnMostrador .peso() > objetoEnVidriera.peso()
+    }
+    method tieneUnObjetoDeColor(unColor) {
+        return (objetoEnVidriera.color() == unColor) || (objetoEnMostrador .color() == unColor)
+    }
+    method puedeMejorar() {
+        return not(self.estaEquilibrado()) || (self.esMonocromatico())
+    }
+    method puedeOfrecerAlgo(unaPersona) {
+        return unaPersona.leGusta(objetoEnVidriera) || unaPersona.leGusta(objetoEnMostrador )
+    }
+
+    method objetoEnVidriera() = objetoEnVidriera
+    method objetoEnMostrador () = objetoEnMostrador 
 }
