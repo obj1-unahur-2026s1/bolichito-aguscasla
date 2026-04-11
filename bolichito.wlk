@@ -48,7 +48,7 @@ object biblioteca {
     method material() = madera
     method peso() = 8000  
 }
-object mugneco {
+object muñeco {
     var peso = 200
 
     method color() = celeste
@@ -136,7 +136,7 @@ object bolichito {
         objetoEnVidriera = nuevoObjeto
     }
     method cambiarObjetoDelMostrador(nuevoObjeto) {
-        objetoEnMostrador  = nuevoObjeto
+        objetoEnMostrador = nuevoObjeto
     }
     
     method esBrillante() {
